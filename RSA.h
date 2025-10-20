@@ -1,8 +1,5 @@
 //
 //  RSA.h
-//  M02
-//
-//  Created by Shabana on 9/16/25.
 //
 
 #ifndef RSA_H_INCLUDED
