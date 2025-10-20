@@ -1,8 +1,5 @@
 //
 //  RSA.cpp
-//  M02
-//
-//  Created by Shabana on 9/16/25.
 //
 #include"RSA.h"
 #include<cmath>
