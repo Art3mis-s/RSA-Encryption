@@ -1,5 +1,4 @@
-# RSA-Encryption
----
+
 
 # 🔐 RSA Encryption Algorithm – C++ Implementation
 
@@ -18,7 +17,6 @@ The algorithm works by generating two keys:
 * A **public key** used for encryption.
 * A **private key** used for decryption.
 
-Messages encrypted with one key can only be decrypted with the other, ensuring secure data transmission.
 ---
 
 ### 🧮 Core Mathematical Concepts
