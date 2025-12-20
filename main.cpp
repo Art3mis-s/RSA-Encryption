@@ -54,4 +54,21 @@ int main()
     
     m = modExp(c, d, n);
     cout << "Decrypted cipher: " << m << endl;
+
+
+    cout << "\n--- Brute-force crack---\n";
+
+        unsigned long long p2, q2, lambda2, d2;
+
+        if (crackRSA(n, e, p2, q2, lambda2, d2)) {
+            cout << "Factor p found: " << p2 << "\n";
+            cout << "Factor q found: " << q2 << "\n";
+            cout << "computed lambda(n): " << lambda2 << "\n";
+            cout << "Derived private key d: " << d2 << "\n";
+
+            unsigned long long cracked = modExp(c, d2, n);
+            cout << "Decrypted message using derived private key: " << cracked << "\n";
+        } else {
+            cout << "RSA key recovery unsuccessful.\n";
+        }
 }
