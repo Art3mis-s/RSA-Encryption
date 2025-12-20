@@ -74,3 +74,27 @@ unsigned long long modExp(unsigned long long base, unsigned long long exp, unsig
     return ans;
 }
 
+
+// EC
+unsigned long long bruteFactor(unsigned long long n)
+{
+    for (unsigned long long i = 2ULL; i <= n / i; ++i) {
+        if (n % i == 0ULL) return i;
+    }
+    return 0ULL;
+}
+
+bool crackRSA(unsigned long long n, unsigned long long e,
+              unsigned long long& p, unsigned long long& q,
+              unsigned long long& lambda, unsigned long long& d)
+{
+    p = bruteFactor(n);
+    if (p == 0ULL) return false;
+
+    q = n / p;
+    lambda = lcm(p - 1ULL, q - 1ULL);
+    d = modInverse(e, lambda);
+
+    return (d != 0ULL);
+}
+
